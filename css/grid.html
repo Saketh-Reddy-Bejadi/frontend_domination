@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,body{
+        width: 100%;
+        height: 100%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      nav{
+        padding: 10px 0px;
+        display: grid;
+        background-color: rgb(221, 96, 96);
+        grid-template-columns: 500px 200px 200px 200px 200px;
+        align-items: center;
+        justify-items: center;
+      }
+      .logo{
+        justify-self: start;
+        padding:0px 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h2 class="logo" >Stellar</h2>
+      <h3>Home</h3>
+      <h3>About</h3>
+      <h3>Services</h3>
+      <h3>Contact</h3>
+    </nav>
+  </body>
+</html>

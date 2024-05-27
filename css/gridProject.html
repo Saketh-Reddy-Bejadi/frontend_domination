@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Project</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      main {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+      .left {
+        padding: 30px;
+      }
+      .left1 {
+        display: grid;
+        grid-template-columns: 3% 97%;
+        grid-template-rows: 25% 75%;
+        justify-items: end;
+      }
+      .right {
+        padding:43px 30px;
+        display: grid;
+        grid-template-columns: 97% 3%;
+      }
+      #logo {
+        font-size: 30px;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .menu {
+        text-align: end;
+        padding:20px 0px;
+      }
+      .left2 {
+        font-size: 80px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="left">
+        <div class="left1">
+          <p id="logo"><b>*</b></p>
+          <p>Menu</p>
+          <div class="menu">
+            <p>Home Page</p>
+            <p>Portfolio</p>
+            <p>Fashion Work -&copy;2021</p>
+            <p>News/Articles</p>
+            <p>Contact</p>
+          </div>
+        </div>
+        <div class="left2">
+            <p id="e1e1" >SELECT</p>
+            <p id="e1e2" >FASHION</p>
+            <p id="e1e3" >MOD.05--</p>
+            <p id="e1e4" >SCENE</p>
+        </div>
+      </div>
+      <div class="right">
+        <img src="./cristina-gottardi-CSpjU6hYo_0-unsplash.jpg" width="90%" alt="">
+        <p style="font-size: 35px;" ><b>*</b></p>
+      </div>
+    </main>
+  </body>
+</html>

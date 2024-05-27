@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Project-1</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+      nav {
+        width: 100%;
+        display: flex;
+        padding: 30px;
+        justify-content: end;
+        gap: 30px;
+        font-weight: bold;
+        font-size: 17px;
+        align-items: center;
+      }
+      .cart{
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 50%;
+      }
+      header{
+        padding: 30px 90px;
+      }
+      .section1{
+        width: 60%;
+        font-size: 80px;
+        /* line-height: 80px; */
+        font-weight: 500;
+        padding:0px 0px 40px 0px;
+      }
+      .section2{
+        width: 100%;
+        font-size: 20px;
+        line-height:30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: rgb(45, 45, 45);
+      }
+      .sec2part2{
+        width: 26%;
+      }
+      .links{
+        text-decoration: none;
+        padding:10px 0px;
+        border-top: 3px solid gray;
+      }
+      .links a{
+        text-decoration: none;
+        color: black;
+      }
+      .links a:hover{
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <p>About</p>
+      <p>News</p>
+      <p>Cart</p>
+      <div class="cart" >$</div>
+    </nav>
+    <header>
+        <h1 class="section1">
+            Lightly padded, quilted jacket in recycled polyester.
+        </h1>
+        <div class="section2" >
+            <p class="sec2part1" >Exclusive brands aspire for the label haute<br>couture, but the term is technically limited to<br>members of the Chambre Syndicate de la Haute</p>
+            <div class="sec2part2">
+               <div class="links" >
+                <a href="">Add to cart</a>
+               </div>
+                <div class="links" >
+                    <a href="">Product details</a>
+                </div>
+                <div class="links" >
+                    <a href="">Shipping</a>
+                </div>
+            </div>
+        </div>
+    </header>
+  </body>
+</html>
