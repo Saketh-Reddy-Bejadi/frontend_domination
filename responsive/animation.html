@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations</title>
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: darkgoldenrod;
+            position: relative;
+            animation-name: anime;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+        }
+        @keyframes anime {
+            from{
+                top: 0;
+                left: 0;
+            }
+            to{
+                top: 0;
+                left: 80%;
+                rotate: 360deg;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" ></div>
+    <div class="box2" ></div>
+</body>
+</html>
