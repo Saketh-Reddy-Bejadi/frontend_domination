@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    let count = 0;
+
+    function render() {
+      document.getElementById('root').innerHTML = `
+        <div>
+          <h1>${count}</h1>
+          <button onclick="increment()">Increment</button>
+          <button onclick="decrement()">Decrement</button>
+        </div>
+      `;
+    }
+
+    function increment() {
+      count++;
+      render();
+    }
+
+    function decrement() {
+      count--;
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
