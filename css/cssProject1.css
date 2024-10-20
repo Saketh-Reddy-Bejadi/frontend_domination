@@ -64,6 +64,7 @@ header {
 }
 .links:hover i {
   opacity: 1;
+  font-size: 25px;
 }
 .links a {
   text-decoration: none;
