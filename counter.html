@@ -11,10 +11,11 @@
 
     function render() {
       document.getElementById('root').innerHTML = `
+        <div>
           <h1>${count}</h1>
           <button onclick="increment()">Increment</button>
           <button onclick="decrement()">Decrement</button>
-          <button onclick="reset()">Rest</button>
+        </div>
       `;
     }
 
@@ -25,10 +26,6 @@
 
     function decrement() {
       count--;
-      render();
-    }
-    function reset(){
-      count = 0;
       render();
     }
 
