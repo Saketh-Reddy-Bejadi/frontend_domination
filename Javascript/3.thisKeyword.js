@@ -56,6 +56,6 @@ obj3.ThisValue();
 
 
 // addEventListener
-document.getElementById("demo").addEventListener("click",function(){
+document.getElementById("ele1").addEventListener("click",function(){
     console.log(this.innerHTML); // this value in the event listener will be the element 'demo'
 })
