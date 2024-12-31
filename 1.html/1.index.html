@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!--Headings tags-->
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+
+    <!--Paragraph, Bold, Italic-->
+    <p>Lorem ipsum dolor, sit amet <b>consectetur adipisicing elit.</b> Eos laboriosam esse maxime <i>iste perspiciatis temporibus</i> corporis delectus commodi? Tempore, alias!</p>
+
+
+    <!-- 
+    sup=>used for power
+    sub=>used for base
+    -->
+    <p>10<sup>2</sup></p>
+    <p>CO<sub>2</sub></p>
+
+
+    <!--
+    br=> break line(content to next line)
+    hr=> draws a horizontal line
+    -->
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto nesciunt ut nisi labore vitae <br> ducimus temporibus odio consectetur quos eum sit, eius veniam <hr> tempore? Ipsum sunt ipsa recusandae consequatur pariatur.</p>
+
+
+    <!-- Ordered_list(ol) & Unorder_list(ul) -->
+    <!--
+    <li> => to define an list_item
+    type="1" is used to change the bullet point
+    -->
+    <ol type="">
+        <li>Apple</li> 
+        <li>Mango</li>
+        <li>Banana</li>
+    </ol>
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+
+    <!-- Anchor Tag -->
+    <!--
+    anchor_tag used to add hyper links in the webpage
+    href => the webpage link that we should redirect to
+    Google => is the text the we click to redirect in the webpage 
+    target="_blank" => is used to open the link in the new brower tab
+    -->
+    <a href="https://www.google.com" target="_blank">Google</a><br> <br>
+
+    <!-- Image & Video Tags -->
+    <!--
+    img => Is used to add images to the webpage
+    src => Is used to add the source image or video link
+    alt => Is text will the rendered when image is not found in the specified url link
+    width, height => Are two attributes used to define the width and height of image and video
+    video => Is used to add video tags to the webpage
+    controls => Is a attribute used to get video control options
+    autoplay => Is a attribute used to autoplay the video when page is loaded but it will only play when the video has no audio or sound
+    muted => Is a attribute used to mute the sound of the video
+    loop => Is a attribute used to play the video in a loop
+    -->
+    <img src="https://sampleimg.com/cat.png" alt="cat_img"> <br> <br>
+    <video src="https://samplevideo.com/random.mp4" width="200px" controls autoplay loop muted></video> <br> <br>
+
+    <!-- Form  -->
+    <!--
+    form => Is a tag used to create a form which consists of multiple fields of inpus and buttons to submit by the user.
+    label => Is a tag used to create a label which define the value to be entered into the input field.
+    input => Is a tag used to take input values based on type attribute.
+    type_text => Allows all the values as the input.
+    type_password => Allows all the values as the input but will be displayed as dots.
+    type_email => Allows only the email as the input value which consists of '@' and '.com'.
+    type_chechbox => To choose multiple values.
+    type_radio => To choose sinlge values (attribute name is used).
+    type_file => Allows file as a input value.
+    placeholder => An attribute of input tag which dispaly the value in the input feild if no value entered.
+    
+    -->
+    <label for="username">username:</label> 
+    <input type="text" id="username"> <br> <br>
+    <label for="password">Password:</label>
+    <input type="password"> <br> <br>
+    <label for="email">email:</label>
+    <input type="email" placeholder="youremail@gmail.com"> <br> <br>
+
+
+
+    <!-- Id and class -->
+    <!--
+    id => Is used to style and identify the element(unique)
+    class => Is used to style and identify the element (not unique)
+    -->
+
+    <!--Div and span-->
+    <!--
+    div => Is a element used to group different elements together and it is a block element
+    span => Is used to group different elements together but is a inline element
+    -->
+    <div>
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quaerat!</p>
+    </div>
+    <span>
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptatibus iure debitis.</p>
+    </span>
+
+
+</body>
+</html>
