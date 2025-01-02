@@ -1,0 +1,71 @@
+<!-- 6th -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Practice</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+            font-family:cursive;
+        }
+        main{
+            padding:20px 50px 50px 50px;
+        }
+        button{
+            margin: 20px;
+            padding: 15px 40px;
+            border: 1px solid black;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        #content{
+            padding: 50px;
+            font-size: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        #user1,#user2,#user3{
+            display: none;
+
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+        <button id="btn1" type="button">Alex Johnson</button>
+        <button id="btn2" type="button">Priya Sharma</button>
+        <button id="btn3" type="button">John Carter</button>
+        <div id="content" >
+            <span id="user1" >
+                <h2>Alex Johnson</h2>
+                <p>Alex Johnson is a 22-year-old Computer Science graduate with a knack for innovation and problem-solving. During his undergraduate years, he completed internships at tech giants like Microsoft and Tesla, where he worked on cutting-edge projects involving software development and artificial intelligence. Alex has a deep understanding of programming languages such as Python, JavaScript, and C++, which he has applied to build scalable web applications and advanced machine learning models.</p>
+                <p> Apart from his technical expertise, Alex has demonstrated leadership skills as the president of his college coding club, organizing workshops and hackathons that attracted participation from hundreds of students. He also contributed to open-source projects, helping improve software accessibility for non-technical users. Alex’s portfolio includes a facial recognition application powered by deep learning and a real-time stock market analysis tool.</p>      
+                <p> In his free time, Alex explores blockchain technology and its applications in decentralized finance. His passion for learning is reflected in his pursuit of certifications in Cloud Computing and Cybersecurity. A regular attendee of tech meetups and conferences, Alex has built a vast network of industry professionals. His ultimate goal is to leverage technology to solve real-world problems and drive meaningful change.</p>
+            </span>
+            <span id="user2">
+                <h2>Priya Sharma</h2>
+                <p>Priya Sharma, a 21-year-old B.Tech student specializing in Information Technology, has established herself as a promising young talent in data analytics and database management. She has earned certifications in SQL, Tableau, and Power BI, enabling her to design insightful dashboards and optimize database performance for real-world applications. Priya has interned at Deloitte, where she analyzed client data to generate actionable insights, significantly improving decision-making processes.</p>
+                <p>Her academic achievements are equally impressive, consistently ranking in the top 5% of her class. Priya actively participates in hackathons and coding competitions, securing podium finishes in events like Smart India Hackathon and Microsoft Imagine Cup. As the vice-president of her college's coding club, she mentors junior students and conducts workshops on data visualization and programming fundamentals.</p>      
+                <p>Priya’s notable projects include an e-commerce recommendation engine and a sentiment analysis tool for social media platforms. Beyond academics, she volunteers with NGOs, teaching underprivileged children basic computer skills. Priya is a strong advocate for women in tech, frequently speaking at events to inspire others. Her vision is to become a data scientist and contribute to solving global challenges through data-driven strategies.</p>
+            </span>
+            <span id="user3">
+                <h2>John Carter</h2>
+                <p>John Carter, a 24-year-old Mechanical Engineering graduate, has seamlessly transitioned into the tech industry with a focus on cloud computing and DevOps. After completing his degree, he pursued certifications in AWS, Azure, and Kubernetes, gaining proficiency in managing cloud infrastructure and automating deployment pipelines. John interned at Amazon Web Services, where he played a pivotal role in improving server uptime and reducing deployment errors.</p>
+                <p>During his undergraduate years, John showcased his technical prowess by designing a solar-powered vehicle, which won accolades at national-level competitions. He later realized his passion for technology and upskilled himself through online courses and projects. His portfolio includes building scalable microservices for e-commerce platforms and implementing CI/CD pipelines for startups.</p>      
+                <p>John is also an active contributor to open-source projects, particularly in the realm of cloud automation. He participates in hackathons and tech meetups, often presenting on topics like containerization and serverless architecture. Beyond his professional pursuits, John enjoys mentoring students and helping them navigate career transitions into tech. His long-term goal is to become a solutions architect, bridging the gap between technical innovation and business needs.</p>
+            </span>
+        </div>
+    </main>
+    
+    <script src="3.pracite.js"></script>
+  </body>
+</html>

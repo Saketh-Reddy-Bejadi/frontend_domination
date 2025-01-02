@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+    <style>
+        body,html{
+            width: 100%;
+            height:100%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        .main{
+            padding: 50px;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            font-weight: 500;
+            padding: 10px 20px;
+            font-size: 18px;
+            width: 50vw;
+            border: 1px solid #c7c7c7;
+            outline-color: cornflowerblue;
+            border-radius: 20px;
+        }
+        .container{
+            width: fit-content;
+            padding:60px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+        .person{
+            transition: all 0.9s ease-in-out;
+            text-align: center;
+        }
+        .scrollInfo{
+            position: fixed;
+            top: 0;
+            height: 10px;
+            background-color: mediumorchid;
+            border: 1px solid black;
+        }
+        .section2{
+            width: 100vw;
+            height: 100vh;
+            background-color: slategrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <span class="scrollInfo" ></span>
+        <input type="text" placeholder="Search..." >
+        <div class="container" ></div>
+    </div>
+    <div class="section2" ></div>
+
+    <script>
+        var range=document.querySelector('.scrollInfo')
+        var s;
+        window.addEventListener('scroll',()=>{
+            s=window.scrollY;
+            range.style.width=`${(s/700)*100}%`;
+        })
+        var data=[
+            {name:"Aditya",url:"https://img.freepik.com/free-photo/cheerful-hindu-guy-posing-laughing-crossed-his-arms-studio-black-background_613910-20913.jpg?t=st=1735837676~exp=1735841276~hmac=e1af8ddf4bc7883c8a218baed02219a14034aecbab615aafc0ec5cedca95a6c7&w=826"},
+            {name:"Kriti",url:"https://img.freepik.com/free-photo/young-pretty-model-is-smiling_114579-13323.jpg?t=st=1735838406~exp=1735842006~hmac=e375b8262cae8905afad261bb4e5119209bede2dbd3ccbef9bbcca121352c3f2&w=826"},
+            {name:"Karthik",url:"https://img.freepik.com/free-photo/smiley-man-holding-camera-front-view_23-2149915895.jpg?t=st=1735837757~exp=1735841357~hmac=8a8df9ac169c1242338b33e94547c68f6b77fac859e5c6c88cbdb998c5d6711f&w=360"},
+            {name:"Siddharth",url:"https://img.freepik.com/free-photo/close-up-portrait-young-man-isolated-black-wall-photoshot-real-emotions-male-model-smiling-feeling-happy-facial-expression-pure-clear-human-emotions-concept_155003-28040.jpg?t=st=1735837950~exp=1735841550~hmac=628b2d5e004be0c6867da9b7089703ad06b8c5b8f3737169a43c24422dabfabd&w=826"},
+            {name:"Kavitha",url:"https://img.freepik.com/free-photo/portrait-young-beautiful-indian-woman-with-sari_123827-29630.jpg?t=st=1735837902~exp=1735841502~hmac=b70c886331736ab48262cfd4e23bb872736fe0e426fd29bb32422aae056d0f00&w=826"},
+            {name:"Shreya",url:"https://img.freepik.com/free-photo/lady-shirt-jacket-standing-with-crossed-arms-looking-confident-front-view_176474-44888.jpg?t=st=1735837978~exp=1735841578~hmac=85fa3e3753bddcaa2f93accaa1307916f70cd006657d8bb8d07af740ab0338cd&w=826"},
+            {name:"Shruti",url:"https://img.freepik.com/free-photo/expressive-senior-woman-posing_344912-2817.jpg?t=st=1735838065~exp=1735841665~hmac=caaea65cf37ec08fb408d884319384fcb9b09ee7e27efcc00f8c59dae95ed522&w=826"},
+            {name:"Ankit",url:"https://img.freepik.com/free-photo/portrait-bearded-man-with-glasses-standing-white-wall_114579-47371.jpg?t=st=1735838572~exp=1735842172~hmac=3ecca045ba117b9939159f37389309ab487dea58bcc76fab83f29db4a3c999e4&w=826"},
+            {name:"Kavya",url:"https://img.freepik.com/free-photo/picture-dissatisfied-grumpy-young-afro-american-woman-with-long-straight-hair-expressing-her-disagreement-keeping-arms-folded-looking-with-serious-skeptical-facial-expression_344912-1026.jpg?t=st=1735838171~exp=1735841771~hmac=0a3704d472cc9ff2519d66a5b4429271d53d15956fe644feab1a0148ad59520f&w=826"},
+            {name:"Anudeep",url:"https://img.freepik.com/free-photo/young-indian-student-man-red-checkered-shirt-jeans-with-backpack-posed-street_627829-2685.jpg?t=st=1735838623~exp=1735842223~hmac=abac9d4d34e4d3ab2a8afaa2a4f9f24d0b710f551afe57b3b007c5b5be6ca835&w=826"},
+            {name:"Siddharth",url:"https://img.freepik.com/free-photo/indian-man-student-shirt-posed-outdoor_627829-2276.jpg?t=st=1735838652~exp=1735842252~hmac=862f15cdc01a124b1066181ed4cc4646e82254d02ed02aab85f515214c4a590f&w=826"},
+        ];
+        var newItems='';
+        data.forEach(p=>{
+            newItems+=` 
+            <div class="person" >
+                <img src=${p.url} alt=${p.name}>
+                <h2>${p.name}</h2>
+            </div>`;
+        })
+        document.querySelector(".container").innerHTML+=newItems;
+
+        var input=document.querySelector("input");
+        input.addEventListener("input",(e)=>{
+            var newList="";
+            data.forEach(p=>{
+                if(p.name.toLocaleLowerCase().startsWith(input.value.toLocaleLowerCase())){
+                    newList+=` 
+                        <div class="person" >
+                            <img src=${p.url} alt=${p.name}>
+                            <h2>${p.name}</h2>
+                        </div>`;
+                }
+            });
+            document.querySelector(".container").innerHTML=newList;
+        });
+
+    </script>
+</body>
+</html>
