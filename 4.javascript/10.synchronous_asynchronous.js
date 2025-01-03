@@ -33,8 +33,9 @@ fetch(`https://randomuser.me/api/`)
 axios.get('https://randomuser.me/api/')
 .then(res=>console.log(res.data.results[0].gender)) //axios with provide the json formatted data directly
 
+//Promises=> is an object representing the eventual completion or failure of an asynchronous operation. It represents a value that wil be available in the future.Either it succeeds("resolved") or fails("rejected") but in time time of execution of the opreation the value will be "pending"...
 
-//promises=> is a concept of handling the error occurring while fetching the data from the server..
+//For now is a concept of handling the error occurring while fetching the data from the server..
 var pro=new Promise((resolve, reject) => {
   fetch(`https://randomuser.me/api/`)
   .then(raw=>raw.json())

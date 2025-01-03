@@ -1,7 +1,7 @@
 //Higher Order Functions
 
 /*
-A function which takes another function as an argument or a fucntion that accepts a function as a parameter is a higher order function
+A function which takes another function as an argument or a function that accepts a function as a parameter is a higher order function
 */
 
 function parent(child){

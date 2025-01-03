@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-origin: padding-box;
+        }
+    </style>
+</head>
+<body class="bg-zinc-700">
+    <main class="p-20" >
+        <h1 id="status" class="text-white text-3xl mb-5" >Status: <span>Blocked</span></h1>
+        <button id="blockBtn" class="bg-red-600 px-10 rounded-md text-white text-xl py-3 mr-5" >Block</button>
+        <button id="unBlockBtn" class="bg-green-600 px-10 rounded-md text-white text-xl py-3" >Unblock</button>
+    </main>
+
+    <script>
+        var userStatus=document.querySelector('span');
+        var blockBtn=document.querySelector("#blockBtn");
+        var unBlockBtn=document.querySelector("#unBlockBtn");
+        function statusCheck(){
+            var b=localStorage.getItem('blocked');
+            if(b==='false'){
+                userStatus.innerHTML="Unblocked";
+            }else{
+                userStatus.innerHTML="Blocked";
+            }
+        }
+
+        blockBtn.addEventListener('click',()=>{
+            localStorage.setItem('blocked',true);
+            statusCheck();
+        })
+
+        unBlockBtn.addEventListener('click',()=>{
+            localStorage.setItem('blocked',false);
+            statusCheck();
+        })
+        statusCheck(); //initial status check on page load
+
+    </script>
+</body>
+</html>
