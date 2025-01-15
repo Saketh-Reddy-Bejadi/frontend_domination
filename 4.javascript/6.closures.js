@@ -9,7 +9,7 @@ function Xample(){
 }// a, b will be removed from the memory after the execution of the function
 
 /*
-But in JS there is a concept of remembering or storing the varialbe for the future use cases if needed is closure.
+But in JS there is a concept of remembering or storing the variable for the future use cases if needed is closure.
 */
 
 /*

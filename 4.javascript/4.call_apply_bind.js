@@ -3,7 +3,7 @@
 /*
 By default the value of this within the function will be "window", but by use call and then calling the function the what ever value we pass while calling the function will be the value of "this"
 
-Remaing arguments can be passed by separating them using comma
+Remaining arguments can be passed by separating them using comma
 */
 function val(a,b){
     console.log(this,`${a}, ${b}`);
@@ -29,7 +29,7 @@ nfunc();
 /*
 bind is as same as call and also can be used as a apply but the major difference is that bind will not run or call the function but it will return a function which can be used to call later 
 
-passing the arguments is same as call(passing by seperated comma)
+passing the arguments is same as call(passing by separated comma)
 */
 
 

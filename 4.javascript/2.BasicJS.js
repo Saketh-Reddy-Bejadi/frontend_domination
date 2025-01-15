@@ -1,4 +1,4 @@
-// console alert propmt
+// console alert prompt
 
 console.log("To print a message");
 console.warn("To print a warning");
@@ -26,7 +26,7 @@ console.log((2000/discount)*100-amount);
 
 
 
-// types(prmitive and reference)
+// types(primitive and reference)
 
 //primitive types
 // character->'a'
@@ -123,9 +123,9 @@ for(var i in b) console.log(i,b[i]);
 
 
 
-//Functions -> [function_statment, function_expression, anonymous_function, arrow_function]
+//Functions -> [function_statement, function_expression, anonymous_function, arrow_function]
 
-//function_statment
+//function_statement
 function func(){
     var a=10,b=20;
     console.log(a+b);
@@ -174,7 +174,7 @@ var a=null; //assigned null as a values which can be changes later
 
 //Arrays
 
-//collection of elements together in sequentional order
+//collection of elements together in sequential order
 var real_number=[1,2,3,4,5,6];
 
 //access using their index which starts from 0

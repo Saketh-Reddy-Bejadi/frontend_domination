@@ -48,4 +48,4 @@ Usersp.prototype.logUserDetails=function(){
 }
 var usersp1=new Usersp("Saketh",10);
 var usersp2=new Usersp("Arjun",20);
-/*No matter how many users there are but the reference of the fucntion will be shared between all of them */
+/*No matter how many users there are but the reference of the function will be shared between all of them */

@@ -1,6 +1,6 @@
 //Synchronous and Asynchronous
 
-//Synchronous code is which is not consist of any these fucntions [setTimeout, setInterval, fetchAPI, Axios, promise]
+//Synchronous code is which is not consist of any these functions [setTimeout, setInterval, fetchAPI, Axios, promise]
 
 
 // Asynchronous
@@ -20,7 +20,7 @@ var setInerFunc=setInterval(() => {
     clearInterval(setInerFunc);
   }
 }, 5000);
-//to stops the infinite loop use "clearInterval()" and pass the function varialbe assigned to..
+//to stops the infinite loop use "clearInterval()" and pass the function variable assigned to..
 
 
 //fetch API
@@ -33,7 +33,7 @@ fetch(`https://randomuser.me/api/`)
 axios.get('https://randomuser.me/api/')
 .then(res=>console.log(res.data.results[0].gender)) //axios with provide the json formatted data directly
 
-//Promises=> is an object representing the eventual completion or failure of an asynchronous operation. It represents a value that wil be available in the future.Either it succeeds("resolved") or fails("rejected") but in time time of execution of the opreation the value will be "pending"...
+//Promises=> is an object representing the eventual completion or failure of an asynchronous operation. It represents a value that wil be available in the future.Either it succeeds("resolved") or fails("rejected") but in time time of execution of the operation the value will be "pending"...
 
 //For now is a concept of handling the error occurring while fetching the data from the server..
 var pro=new Promise((resolve, reject) => {
@@ -60,7 +60,7 @@ setTimeout(()=>{
 
 
 
-//callbacks=> Is a concept of executing a function which is passed as a argument to the main function. If the task in the main fucntion is done then the callback function will be executed immediately..
+//callbacks=> Is a concept of executing a function which is passed as a argument to the main function. If the task in the main function is done then the callback function will be executed immediately..
 
 //logging the name[title,firstName,lastName] of the user using callback function
 function fetchTask(url, callback){
@@ -80,7 +80,7 @@ fetchTask(`https://randomuser.me/api/`,(data)=>{
 // async and await ==> are used to make an asynchronous code to execute as line by line or waiting until the asynchronous code and then executing the after statements
 
 //use await to wait until the asynchronous code is processes and ready to be executed
-//use async for the parnet of this while block which consists of asynchronous and synchronous code
+//use async for the parent of this while block which consists of asynchronous and synchronous code
 
 function fetchRenderTask1(url){
   var res=fetch(url)
@@ -90,7 +90,7 @@ function fetchRenderTask1(url){
 fetchRenderTask1(`https://randomuser.me/api/`) //Promise {<pending>}
 
 
-//the line logging the gender is executed right after the fteching the data
+//the line logging the gender is executed right after the fetching the data
 async function fetchRenderTask2(url){
   var res=await fetch(url)
   .then(raw=>raw.json())
@@ -100,13 +100,13 @@ fetchRenderTask2(`https://randomuser.me/api/`) //male
 
 
 
-//Event loop==> A mechanism that mananges how to handle asynchronous operations.*/
+//Event loop==> A mechanism that manages how to handle asynchronous operations.*/
 //Event loop checks the main stack where all the operations will be performed or executed is empty or not, to add asynchronous operations to main stack for the execution..
 
 
 
 
-//Generator => It allows developers take control over the execution flow of statemets in the functions
+//Generator => It allows developers take control over the execution flow of statements in the functions
 function* generator(){
   console.log("Execution started => Step 1");
   yield 1;
@@ -120,7 +120,7 @@ function* generator(){
   yield 5;
 }
 var gen=generator();
-console.log(gen.next()); //executes till the next yeild
+console.log(gen.next()); //executes till the next yield
 console.log(gen.next());
 console.log(gen.next().value); //execute and return the yield value
 // for(var i=0;i<4;i++){
@@ -138,6 +138,6 @@ worker.postMessage(arr)
 worker.onmessage=data=>{
   console.log(data.data);
 }
-//perfroming sum of elements in the array using the worker
+//performing sum of elements in the array using the worker
 
 
