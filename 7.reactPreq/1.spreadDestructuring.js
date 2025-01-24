@@ -39,6 +39,20 @@ var {name,age}=obj;
 console.log(name); //Javascript 
 // this is based on the key name of the object elements
 
+//Let's make things complicated
+var obj={
+    name:"Javascript",
+    age:100,
+    socials:{
+        linkedin: "jsInkedin",
+        instagram: "jsInsta",
+    }
+}
+//to access inkedin social
+var userNameLinkedin=obj.socials.linkedin;
+console.log(userNameLinkedin);
+
+
 
 //But in array we can directly access the value using the index
 var arr = ["Javascript", 21, "javascript@gmail.com"];
