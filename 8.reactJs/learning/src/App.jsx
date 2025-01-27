@@ -1,5 +1,6 @@
 import Card_1 from "./components/Card_1";
-import UseStateHook from "./components/UseStateHook";
+import UseStateHook1 from "./components/UseStateHook1";
+import UseStateHook2 from "./components/UseStateHook2";
 
 export default function App() {
 
@@ -11,7 +12,8 @@ export default function App() {
     */}
 
     <Card_1 />
-    <UseStateHook/>
+    <UseStateHook1/>
+    <UseStateHook2/>
     </>
   );
 }
