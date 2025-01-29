@@ -1,4 +1,5 @@
 import Card_1 from "./components/Card_1";
+import DataDrillingViaProps1 from "./components/DataDrillingViaProps1";
 import UseStateHook1 from "./components/UseStateHook1";
 import UseStateHook2 from "./components/UseStateHook2";
 
@@ -14,6 +15,7 @@ export default function App() {
     <Card_1 />
     <UseStateHook1/>
     <UseStateHook2/>
+    <DataDrillingViaProps1/>
     </>
   );
 }

@@ -6,7 +6,7 @@ const UseStateHook1 = () => {
   //useState => Is a built-in function that allows components to manage state. It provides a way to declare state variables and update them, enabling dynamic and interactive UI behavior.
 
   /*
-  count is a variable which stores the value which is defined in 
+  Count is a variable which stores the value which is defined in 
   useState(value) 
   ex: useState(0) //the value inside the useState will be assigned to the count variable
   */

@@ -43,14 +43,18 @@ const UseStateHook2 = () => {
             onClick={() => {
               nums.length > 0 ? setNums(nums.filter((n, i) => i != 0)) : null;
             }}
-            className={`mt-5 p-7 py-2 text-white font-semibold text-xl rounded ${nums.length>0?'bg-fuchsia-900':"bg-red-900"}`}
+            className={`mt-5 p-7 py-2 text-white font-semibold text-xl rounded ${
+              nums.length > 0 ? "bg-fuchsia-900" : "bg-red-900"
+            }`}
           >{`${nums.length > 0 ? "Pop Element" : "No Elements Left"}`}</button>
           {/* Adding the element using spread operator and updating the state.. */}
-          <button 
+          <button
             onClick={() => {
               nums.length < 7 ? setNums([nums.length + 1, ...nums]) : null;
             }}
-            className={`mt-5 p-7 py-2 text-white font-semibold text-xl rounded ${nums.length<7?'bg-fuchsia-900':"bg-red-900"}`}
+            className={`mt-5 p-7 py-2 text-white font-semibold text-xl rounded ${
+              nums.length < 7 ? "bg-fuchsia-900" : "bg-red-900"
+            }`}
           >{`${nums.length < 7 ? "Add an Element" : "Can't Add"}`}</button>
         </div>
       </div>
