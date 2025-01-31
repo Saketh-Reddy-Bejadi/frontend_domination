@@ -48,7 +48,7 @@ const DataDrillingViaProps1 = () => {
 
   return (
     <>
-      <div className="bg-[#995544] flex gap-5 shrink-0 justify-center items-center p-10">
+      <div className="bg-[#FFD9B3] flex gap-5 shrink-0 justify-center items-center p-10 flex-wrap">
         {data.map((item, index) => (
           // Data drilling via props(short for properties) refers to the process of passing data from a parent component to a child component in React.
           <DataDrillingViaProps2
