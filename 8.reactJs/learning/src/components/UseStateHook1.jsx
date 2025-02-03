@@ -15,7 +15,7 @@ const UseStateHook1 = () => {
 
   return (
     <>
-      <div className="p-10 bg-[#ADD8E6] flex flex-col items-center">
+      <div className="p-10 xl:h-[83vh] justify-center bg-[#ADD8E6] flex flex-col items-center">
         <h1 className="text-2xl mb-10">Count: {count}</h1>
         <div className="flex gap-10 text-xl">
           <button

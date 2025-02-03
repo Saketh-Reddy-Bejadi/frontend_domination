@@ -1,27 +1,21 @@
-import Card_1 from "./components/Card_1";
-import DataDrillingViaProps1 from "./components/DataDrillingViaProps1";
-import FormHandlingControlledComponents from "./components/FormHandlingControlledComponents";
-import FormHandlingUseForm from "./components/FormHandlingUseForm";
-import FormHandlingUseRef from "./components/FormHandlingUseRef";
-import UseStateHook1 from "./components/UseStateHook1";
-import UseStateHook2 from "./components/UseStateHook2";
-
+import Routing from "./utlis/Routing";
+import Navbar from "./components/Navbar";
+import { useState } from "react";
 
 export default function App() {
+  const [navbar,setNavbar]=useState(false);
   return (
     <>
-      {/* Components can be thought of as JavaScript functions or classes that return a portion of the UI, typically described using JSX (JavaScript XML).
+      {/*
+        Components can be thought of as JavaScript functions or classes that return a portion of the UI, typically described using JSX (JavaScript XML).
     
-    A component is a reusable piece of code that represents a part of the user interface. They allow you to split the UI into independent, reusable pieces, and think about each piece in isolation
-    */}
+        A component is a reusable piece of code that represents a part of the user interface. They allow you to split the UI into independent, reusable pieces, and think about each piece in isolation
+      */}
+    
 
-      <Card_1 />
-      <UseStateHook1 />
-      <UseStateHook2 />
-      <DataDrillingViaProps1 />
-      <FormHandlingUseRef />
-      <FormHandlingControlledComponents />
-      <FormHandlingUseForm />
+      <Navbar navbar={navbar} setNavbar={setNavbar} />
+      {/* Conditionally performing the rendering and the roting opeartions */}
+      {!(navbar && window.innerWidth <= 768) && <Routing/>}
     </>
   );
 }

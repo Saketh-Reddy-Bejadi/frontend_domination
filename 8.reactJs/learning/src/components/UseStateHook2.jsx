@@ -11,7 +11,7 @@ const UseStateHook2 = () => {
         Using useState in reference types (object)
         Adding or modifiying the object will not re-render the component, so we need to use the spread operator to create a new object and update the state.
       */}
-      <div className="flex flex-col gap-5 text-xl items-center bg-[#B2F0B2] p-20">
+      <div className="flex flex-col gap-5 text-xl items-center bg-[#B2F0B2] p-20 xl:h-[83vh] justify-center">
         <p>Name: {name}</p>
         <p>Online: {online ? "Yes" : "No"}</p>
         <button
@@ -28,7 +28,7 @@ const UseStateHook2 = () => {
         Using useState in reference types (array) 
         Adding or modifiying the array will not re-render the component, so we need to use the spread operator to create a new array and update the state.
       */}
-      <div className="flex flex-col py-10  bg-[#FFFFB3] items-center">
+      <div className="flex flex-col py-10  bg-[#FFFFB3] items-center xl:h-[83vh] ">
         <h2 className="py-4 text-xl font-semibold">Stack Implementation</h2>
         <div className={`${nums.length > 0 ? "border" : ""}`}>
           {nums.reverse().map((num, i) => (

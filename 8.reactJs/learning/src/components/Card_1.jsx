@@ -39,7 +39,7 @@ const Card_1 = () => {
 
   return (
     <>
-      <div className="flex justify-center flex-col px-10 py-10 gap-10 w-full h-fit bg-[#FFB3B3]">
+      <div className="flex justify-center flex-col px-10 py-10 gap-10 w-full xl:h-[83vh] bg-[#FFB3B3]">
         <h1 className="text-3xl font-bold text-center">
           <span className="text-[#0068E6]">M</span>
           <span className="text-[#FF9900]">A</span>

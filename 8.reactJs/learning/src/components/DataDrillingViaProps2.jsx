@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 
+//Accessing the properties as paramters
 const DataDrillingViaProps2 = ({ item,index,handleFriends}) => {
-    
+  
+  //Used destructuring for efficient usage of the elements in the object
   const { name, profession, imgurl, friends } = item;
   return (
     <>
@@ -25,6 +27,7 @@ const DataDrillingViaProps2 = ({ item,index,handleFriends}) => {
   );
 };
 
+//props validation(specifying the type of the prop(s))
 DataDrillingViaProps2.propTypes = {
   item: PropTypes.object,
   index: PropTypes.number,
