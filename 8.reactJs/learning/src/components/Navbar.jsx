@@ -28,7 +28,7 @@ const Navbar = ({ navbar, setNavbar }) => {
           </p>
           <span className="xl:flex justify-center items-center gap-2">
             <NavLink to="/component">
-            {/* Applying the style based on the active state of the NavLink by the function syntax inside NavLink */}
+              {/* Applying the style based on the active state of the NavLink by the function syntax inside NavLink */}
               {(e) => (
                 <button
                   className={`border p-2 border-zinc-400 rounded-xl font-semibold cursor-pointer ${
@@ -43,7 +43,11 @@ const Navbar = ({ navbar, setNavbar }) => {
             <br />
             {/* Applying the style based on the active state of the NavLink using className */}
             <NavLink
-            className={e=>`${e.isActive? "bg-[#ffabbb]":""}  text-zinc-800 border p-2 rounded-xl font-semibold border-zinc-400 cursor-pointer`}
+              className={(e) =>
+                `${
+                  e.isActive ? "bg-[#ffabbb]" : ""
+                }  text-zinc-800 border p-2 rounded-xl font-semibold border-zinc-400 cursor-pointer`
+              }
               to={"/use_state1"}
             >
               useState1
@@ -51,11 +55,13 @@ const Navbar = ({ navbar, setNavbar }) => {
             <br />
             {/* Applying the style based on the active state of the NavLink using style attribute */}
             <NavLink to={"/use_state2"}>
-              {e=>(
-              <button className="border p-2 rounded-xl font-semibold text-zinc-800 border-zinc-400 cursor-pointer"
-                style={{color:e.isActive?"blue":""}}>
-                useState2
-              </button>
+              {(e) => (
+                <button
+                  className="border p-2 rounded-xl font-semibold text-zinc-800 border-zinc-400 cursor-pointer"
+                  style={{ color: e.isActive ? "blue" : "" }}
+                >
+                  useState2
+                </button>
               )}
             </NavLink>
           </span>
@@ -93,6 +99,14 @@ const Navbar = ({ navbar, setNavbar }) => {
               </button>
             </NavLink>
           </span>
+        </div>
+        <div>
+          <p className="mb-2 font-semibold text-xl md:text-md">Form Handling</p>
+          <NavLink to={"/users"}>
+            <button className="border p-2 rounded-xl border-zinc-400 font-semibold text-zinc-800 cursor-pointer mt-2">
+              Users
+            </button>
+          </NavLink>
         </div>
       </nav>
     </>

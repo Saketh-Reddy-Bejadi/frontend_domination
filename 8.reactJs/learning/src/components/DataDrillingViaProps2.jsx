@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-//Accessing the properties as paramters
+//Accessing the properties as parameters
 const DataDrillingViaProps2 = ({ item,index,handleFriends}) => {
   
   //Used destructuring for efficient usage of the elements in the object

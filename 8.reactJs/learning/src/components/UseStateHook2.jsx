@@ -9,7 +9,7 @@ const UseStateHook2 = () => {
     <>
       {/*
         Using useState in reference types (object)
-        Adding or modifiying the object will not re-render the component, so we need to use the spread operator to create a new object and update the state.
+        Adding or modifying the object will not re-render the component, so we need to use the spread operator to create a new object and update the state.
       */}
       <div className="flex flex-col gap-5 text-xl items-center bg-[#B2F0B2] p-20 xl:h-[83vh] justify-center">
         <p>Name: {name}</p>
@@ -26,7 +26,7 @@ const UseStateHook2 = () => {
 
       {/*
         Using useState in reference types (array) 
-        Adding or modifiying the array will not re-render the component, so we need to use the spread operator to create a new array and update the state.
+        Adding or modifying the array will not re-render the component, so we need to use the spread operator to create a new array and update the state.
       */}
       <div className="flex flex-col py-10  bg-[#FFFFB3] items-center xl:h-[83vh] ">
         <h2 className="py-4 text-xl font-semibold">Stack Implementation</h2>

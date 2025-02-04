@@ -14,7 +14,7 @@ export default function App() {
     
 
       <Navbar navbar={navbar} setNavbar={setNavbar} />
-      {/* Conditionally performing the rendering and the roting opeartions */}
+      {/* Conditionally performing the rendering and the routing operations */}
       {!(navbar && window.innerWidth <= 768) && <Routing/>}
     </>
   );
