@@ -1,497 +1,429 @@
-# Web Development Learning Journey
+# JavaScript Basics
 
-## Overview
+This repository contains JavaScript code snippets with explanations covering essential concepts such as console operations, variable declarations, data types, conditionals, loops, functions, arrays, objects, and the `this` keyword.
 
-This repository documents a comprehensive web development learning path, focusing on mastering fundamental web technologies and design principles.
+## Console, Alert, and Prompt
 
-## Table of Contents
+```js
+console.log("To print a message");
+console.warn("To print a warning");
+console.error("To print an error");
 
-1. HTML Fundamentals
-2. CSS Styling
-3. Responsive Design
-4. JavaScript
-5. JavaScript Advanced Concepts 
+alert("To print a message as an alert");
 
-## 1.HTML Fundamentals
-
-### Core Concepts
-
-- Document structure and semantic markup
-- Proper use of HTML5 elements
-- Metadata and viewport configuration
-- Semantic navigation design
-- Multimedia integration
-
-### Key Learning Outcomes
-
-- Understanding HTML document architecture
-- Implementing accessible and meaningful markup
-- Creating well-structured web pages
-- Mastering semantic HTML elements
-
-## 2. CSS Styling
-
-### Essential Topics
-
-- Basic styling techniques
-- Layout design principles
-- Flexbox and Grid layouts
-- CSS animations and transformations
-- Typography and color management
-
-### Advanced Styling Techniques
-
-- Keyframe animations
-- Transformation properties
-- Dynamic styling approaches
-- Cross-browser compatibility considerations
-
-## 3. Responsive Design
-
-### Responsive Design Principles
-
-- Fluid layout strategies
-- Media query implementation
-- Mobile-first design approach
-- Adaptive content presentation
-- Viewport unit utilization
-
-### Responsive Techniques
-
-- Flexible grid systems
-- Dynamic sizing methods
-- Breakpoint management
-- Performance optimization
-- Cross-device compatibility
-
-## Project Setup
-
-### Prerequisites
-
-- Modern web browser
-- Code editor (Visual Studio Code recommended)
-- Basic understanding of web technologies
-
-
-## Learning Objectives
-
-### Technical Skills Development
-
-- Master responsive web design principles
-- Implement advanced CSS techniques
-- Create accessible and semantic web pages
-- Develop cross-browser compatible solutions
-- Optimize web performance
-
-# 4. JavaScript
-
-## Table of Contents
-1. Basic JavaScript Concepts
-2. This Keyword
-3. Call, Apply, and Bind Methods
-
-## Basic JavaScript Concepts
-
-### Console Methods
-```javascript
-// Different console methods for logging
-console.log("Standard message"); // Normal logging
-console.warn("Warning message"); // Warning log
-console.error("Error message"); // Error log
-
-// Alert and Prompt
-alert("Display a message"); // Shows a popup message
-let name = prompt("Enter your name"); // Gets user input
+prompt("To print a message and take input");
+var input = prompt("Enter your name");
+console.log(input);
 ```
+*The `console.log` method prints a message to the console, mainly used for debugging. The `console.warn` method logs a warning message, and `console.error` logs an error message. The `alert` method displays a pop-up alert box to the user. The `prompt` function both displays a message and takes user input, which is stored in the `input` variable and then logged to the console.*
 
-### Variable Declaration
-```javascript
-// Variable Types
-var regularVar = 10; // Function-scoped variable
-let blockScopedVar = 20; // Block-scoped variable
-const constantVar = 30; // Cannot be reassigned
+## Variable Declaration & Initialization
 
-// Data Types
-// Primitive Types
-let number = 42;
-let string = "JavaScript";
-let boolean = true;
-let float = 3.14;
-let undef = undefined;
-let nullable = null;
+```js
+var a = 10;
+var b = 20;
+console.log(a + b);
 
-// Reference Types
-let array = [1, 2, 3];
-let object = { key: "value" };
+let x = 30;
+let y = 40;
+console.log(x + y);
+
+const amount = 2000; // amount will not change
+var discount = 10;
+console.log((2000 / discount) * 100 - amount);
+var discount = 25;
+console.log((2000 / discount) * 100 - amount);
 ```
+*Variables in JavaScript can be declared using `var`, `let`, or `const`. The `var` keyword allows redeclaration, whereas `let` does not. `const` prevents reassignment.*
 
-### Spread Operator
-```javascript
-// Creating copies of arrays
-let original = ['a', 'b', 'c'];
-let copy = [...original]; // Creates a new array
+## Data Types
 
-original.push('d');
-console.log(original); // ['a', 'b', 'c', 'd']
-console.log(copy);     // ['a', 'b', 'c']
+### Primitive Types:
+- A character is a single letter like `'a'`.
+- A string is a sequence of characters, like `"Javascript"`.
+- A number can be an integer or a floating-point value, such as `12` or `12.45`.
+- A boolean represents true or false values.
+- `null` represents the intentional absence of any object value.
+- `undefined` indicates a variable has been declared but has not been assigned a value.
+
+### Reference Types:
+- Arrays (`[]`) store multiple values.
+- Objects (`{}`) store key-value pairs.
+- Functions (`()`) define executable code blocks.
+
+## Assigning Variables
+
+```js
+var c = 10;
+var d = c;
+console.log(`c=${c}, d=${d}`);
+
+c -= 1;
+console.log(`c=${c}, d=${d}`);
 ```
+*Primitive data types are copied by value. When `c` is assigned to `d`, `d` gets the value of `c`. Changing `c` later does not affect `d`.*
 
-### Conditionals
-```javascript
-// If-Else Statements
-if (condition) {
-    // Code to execute if true
-} else if (anotherCondition) {
-    // Alternative condition
-} else {
-    // Default execution
+```js
+var e = [1, 2, 3, 4, 5];
+var f = e;
+console.log(`e=[${e}], f=[${f}]`);
+
+e.pop();
+console.log(`e=[${e}], f=[${f}]`);
+```
+*Reference data types, like arrays, are assigned by reference. When `f` is assigned to `e`, both refer to the same memory location, so changes to `e` also affect `f`.*
+
+## Spread Operator
+
+```js
+var g = ['a', 'b', 'c', 'd', 'e'];
+var h = [...g];
+console.log(`g=[${g}], h=[${h}]`);
+
+g.pop();
+console.log(`g=[${g}], h=[${h}]`);
+
+h.push('f');
+console.log(`g=[${g}], h=[${h}]`);
+```
+*The spread operator (`...`) creates a new copy of an array instead of referencing the original one. This prevents unintended modifications to the original array.*
+
+## Conditionals
+
+```js
+if (true) {
+    console.log("This will always execute");
 }
-
-// Ternary Operator
-let result = condition ? valueIfTrue : valueIfFalse;
 ```
+*A single `if` block executes when the condition is `true`.*
 
-### Loops
-```javascript
-// For Loop
-for (let i = 0; i < 5; i++) {
+```js
+if (0) console.log("false");
+else console.log("true");
+```
+*The `if` statement checks conditions. Since `0` is falsy, the `else` block executes.*
+
+```js
+if (0) console.log("false");
+else if (1) console.log("true");
+else console.log("false");
+```
+*The `else if` statement checks multiple conditions sequentially. Since `0` is falsy, it moves to `else if (1)`, which is truthy, so "true" is logged.*
+
+```js
+var a = 1;
+var b = a ? "true" : "false";
+console.log(b);
+```
+*The ternary operator (`condition ? trueCase : falseCase`) simplifies `if-else` statements. Here, since `a` is truthy, `b` is assigned "true".*
+
+## Loops
+
+```js
+for (var i = 1; i < 6; i++) {
     console.log(i);
 }
-
-// While Loop
-let j = 0;
-while (j < 5) {
-    console.log(j);
-    j++;
-}
-
-// forEach
-let arr = [1, 2, 3, 4, 5];
-arr.forEach((element, index) => {
-    console.log(index, element);
-});
 ```
+*The `for` loop runs a block of code multiple times, incrementing `i` in each iteration.*
 
-### Functions
-```javascript
-// Function Declaration
-function regularFunction(a, b) {
-    return a + b;
+```js
+var i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
 }
+```
+*The `while` loop continues running as long as the condition is true.*
 
-// Function Expression
-const functionExpression = function(a, b) {
-    return a * b;
+## Functions
+
+```js
+function func() {
+    var a = 10, b = 20;
+    console.log(a + b);
+}
+func();
+```
+*A function is defined using the `function` keyword and is executed when called.*
+
+```js
+var expression = function() {
+    var a = 20;
+    console.log(a);
 };
+console.log(expression);
+```
+*A function expression stores a function inside a variable.*
 
-// Arrow Functions
-const arrowFunction = (a, b) => a + b;
-const singleParamArrow = x => x * 2;
+## Arrays
+
+```js
+var real_number = [1, 2, 3, 4, 5, 6];
+console.log(real_number[0]);
+console.log(real_number[100]); // undefined
+```
+*Arrays store ordered elements accessible via index. An out-of-bounds index returns `undefined`.*
+
+## Objects
+
+```js
+var users = ['Saketh', 'Harshith', 'Arjun'];
+
+var Saketh = {
+    username: "saketh1",
+    email: "saketh@gmail.com",
+    password: "mailPassword2"
+};
+```
+*Objects store key-value pairs, making it easier to organize related data. Each property is a key with an associated value.*
+
+## Call, Apply, and Bind Functions
+
+```js
+function val(a, b) {
+    console.log(this, `${a}, ${b}`);
+}
+val.call(); // window
+val.call('val', 10, 20); // 'val' (string)
+```
+*The `call` method allows us to invoke a function with a specified value for `this` and arguments passed separately.*
+
+```js
+function val2(a, b) {
+    console.log(this, a + b);
+}
+val2.apply('val', [2, 5]);
+```
+*The `apply` method is similar to `call`, but it requires arguments to be passed as an array.*
+
+```js
+function val3(a, b) {
+    console.log(this, `${a}, ${b}`);
+}
+const nfunc = val3.bind('value', 10, 20);
+nfunc();
+```
+*The `bind` method returns a new function with a specified `this` value and arguments but does not immediately execute it.*
+
+## The `this` Keyword
+
+```js
+console.log(this); // Global scope, refers to 'window' object
 ```
 
-## This Keyword in JavaScript
+```js
+function ThisValue() {
+    console.log(this); // In a function, 'this' refers to 'window'
+}
+ThisValue();
+```
 
-### This in Different Contexts
-```javascript
-// Global Context
-console.log(this); // Window object in browsers
-
-// Object Method
-const obj = {
-    name: "John",
-    greet: function() {
-        console.log(this.name); // Refers to the object
+```js
+var obj1 = {
+    name: "john",
+    ThisValue: function() {
+        console.log(this); // Refers to 'obj1'
+        console.log(this.name); // Accesses 'name' property
     }
 };
-
-// Arrow Function and This
-const objectWithArrow = {
-    name: "John",
-    greet: () => {
-        console.log(this.name); // Lexical this
-    }
-};
+obj1.ThisValue();
 ```
 
-## Call, Apply, and Bind Methods
+## Constructor & Prototypal Inheritance
 
-### Explicit This Binding
-```javascript
-// Call Method
-function greet(greeting, punctuation) {
-    console.log(`${greeting}, ${this.name}${punctuation}`);
-}
-
-const person = { name: "Alice" };
-greet.call(person, "Hello", "!"); // Explicitly sets this
-
-// Apply Method
-function introduce(greeting, farewell) {
-    console.log(`${greeting}, I'm ${this.name}. ${farewell}`);
-}
-
-introduce.apply(person, ["Hi", "Bye"]); // Arguments as array
-
-// Bind Method
-const boundGreet = greet.bind(person, "Welcome");
-boundGreet("!!!"); // Creates a new function with bound this
-```
-
-## Learning Objectives
-
-### Key Concepts Covered
-- JavaScript fundamentals
-- Variable scoping
-- Function types
-- `this` keyword behavior
-- Method invocation techniques
-
-### Recommended Next Steps
-1. Deeper JavaScript concepts
-2. Asynchronous programming
-3. ES6+ features
-4. Object-oriented programming
-5. Functional programming techniques
-
-## Best Practices
-- Use `let` and `const` over `var`
-- Prefer arrow functions for concise syntax
-- Understand lexical scoping
-- Use strict equality `===`
-- Handle undefined and null carefully
-
-
-# 5. JavaScript Advanced Concepts 
-
-## Table of Contents
-1. [Constructor and Prototypal Inheritance](#constructor-and-prototypal-inheritance)
-2. [Closures](#closures)
-3. [Event Delegation](#event-delegation)
-4. [Higher Order Functions](#higher-order-functions)
-
-## Constructor and Prototypal Inheritance
-
-### Basic Constructor Function
-```javascript
-// Simple Constructor Function
-function Person(name, age) {
+```js
+function User(name, age) {
     this.name = name;
     this.age = age;
 }
-
-// Creating Instances
-let person1 = new Person("John", 30);
-let person2 = new Person("Jane", 25);
-
-console.log(person1); // Person { name: "John", age: 30 }
-console.log(person2); // Person { name: "Jane", age: 25 }
-```
-
-### Problem with Method Duplication
-```javascript
-// Inefficient Method Definition
-function IneffitientUser(name, age) {
-    this.name = name;
-    this.age = age;
-    
-    // Each instance gets its own method copy
-    this.sayHello = function() {
-        console.log(`Hello, my name is ${this.name}`);
-    }
-}
-
-// Creates separate method for each instance
-let user1 = new IneffitientUser("Alice", 25);
-let user2 = new IneffitientUser("Bob", 30);
-
-// Wastes memory as each instance has its own method
-```
-
-### Prototypal Inheritance Solution
-```javascript
-// Efficient Constructor with Prototype
-function EfficientUser(name, age) {
-    this.name = name;
-    this.age = age;
-}
-
-// Shared method on prototype
-EfficientUser.prototype.sayHello = function() {
-    console.log(`Hello, my name is ${this.name}`);
+User.prototype.logUserDetails = function() {
+    console.log(this.name, this.age);
 };
-
-// All instances share the same method reference
-let user1 = new EfficientUser("Alice", 25);
-let user2 = new EfficientUser("Bob", 30);
-
-user1.sayHello(); // Hello, my name is Alice
-user2.sayHello(); // Hello, my name is Bob
+var user1 = new User("Saketh", 10);
+var user2 = new User("Arjun", 20);
 ```
+*Prototypal inheritance allows sharing functions across instances, saving memory by avoiding duplication.*
 
 ## Closures
 
-### Basic Closure Concept
-```javascript
-function outerFunction() {
-    let outerVariable = "I am from outer function";
-    
-    function innerFunction() {
-        console.log(outerVariable);
-    }
-    
-    return innerFunction;
-}
-
-// Closure preserves the outer function's variables
-let closureExample = outerFunction();
-closureExample(); // "I am from outer function"
-```
-
-### Practical Closure Example
-```javascript
-function createCounter() {
-    let count = 0;
-    
-    return {
-        increment: function() {
-            count++;
-            return count;
-        },
-        decrement: function() {
-            count--;
-            return count;
-        },
-        getCount: function() {
-            return count;
-        }
+```js
+function parent() {
+    var num1 = 20;
+    var num2 = 40;
+    return function() {
+        console.log(`${num1}, ${num2}`);
     };
 }
-
-// Each counter is independent
-let counter1 = createCounter();
-let counter2 = createCounter();
-
-console.log(counter1.increment()); // 1
-console.log(counter1.increment()); // 2
-console.log(counter2.increment()); // 1 (separate from counter1)
+var func = parent();
+func();
 ```
+*A closure allows a function to remember variables from its parent scope even after the parent function has executed.*
 
-## Event Delegation
 
-### Basic Event Delegation
-```html
-<div id="parent-list">
-    <li id="item1">Item 1</li>
-    <li id="item2">Item 2</li>
-    <li id="item3">Item 3</li>
-</div>
+## Event Delegation & Event Bubbling
 
-<script>
-document.getElementById('parent-list').addEventListener('click', function(event) {
-    if (event.target.tagName === 'LI') {
-        console.log('Clicked item:', event.target.id);
-    }
+### Event Delegation
+```js
+document.querySelector('.main').addEventListener("click", function(details){
+    if (details.target.id=='ele1') console.log("Frontend");
+    else if (details.target.id=='ele2') console.log("Domination");
 });
-</script>
 ```
+*A single event listener is attached to a parent element to handle events from child elements.*
 
-### Event Bubbling Example
-```html
-<div id="outer">
-    <div id="inner">
-        <button id="button">Click Me</button>
-    </div>
-</div>
-
-<script>
-document.getElementById('outer').addEventListener('click', function() {
-    console.log('Outer div clicked');
+### Event Bubbling
+```js
+document.querySelector('#ele1').addEventListener("click",()=>{
+    console.log('heading clicked');
 });
-
-document.getElementById('inner').addEventListener('click', function() {
-    console.log('Inner div clicked');
+document.querySelector('body').addEventListener("click",()=>{
+    console.log('body clicked');
 });
-
-document.getElementById('button').addEventListener('click', function() {
-    console.log('Button clicked');
-});
-
-// When button is clicked, all three events will trigger
-</script>
 ```
+*An event on a child element propagates up the DOM tree, triggering event listeners attached to ancestor elements.*
 
-## Higher Order Functions
+## Higher-Order Functions
 
-### Functions as Arguments
-```javascript
-// Higher Order Function Taking a Function as Argument
-function processArray(arr, processingFunction) {
-    let result = [];
-    for (let item of arr) {
-        result.push(processingFunction(item));
-    }
-    return result;
+```js
+function parent(child){
+    console.log("Parent Function");
+    child();
 }
-
-// Example usage
-let numbers = [1, 2, 3, 4, 5];
-
-let doubled = processArray(numbers, function(num) {
-    return num * 2;
+parent(function(){
+    console.log('Child Function')
 });
-
-let squared = processArray(numbers, num => num * num);
-
-console.log(doubled);  // [2, 4, 6, 8, 10]
-console.log(squared);  // [1, 4, 9, 16, 25]
 ```
+*A function that takes another function as an argument is called a higher-order function.*
 
-### Function Returning Another Function
-```javascript
-function multiplier(factor) {
-    return function(number) {
-        return number * factor;
+```js
+function abcd(){
+    return function(){
+        console.log("Inner Function");
     }
 }
+var innerFunction=abcd();
+innerFunction();
+```
+*A function that returns another function is also a higher-order function.*
 
-// Create specialized multiplication functions
-let double = multiplier(2);
-let triple = multiplier(3);
+## Error Handling (try-catch)
 
-console.log(double(5));  // 10
-console.log(triple(5));  // 15
+```js
+function divide(a, b){
+    try{
+        if(b == 0){
+            throw Error("division by zero failed");
+        }
+        console.log(a / b);
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+divide(10, 2);
+divide(10, 0);
+```
+*The `try` block attempts execution, and the `catch` block handles errors if any occur.*
+
+## Synchronous and Asynchronous Code
+
+### Synchronous Code
+*Synchronous code executes sequentially, blocking further execution until the current task is completed.*
+
+### Asynchronous Code
+*Asynchronous operations allow non-blocking execution, enabling the program to continue running while waiting for operations to complete.*
+
+```js
+setTimeout(() => {
+  console.log("setTimeout");
+}, 5000);
+```
+*The `setTimeout` function runs a piece of code after a specified delay.*
+
+```js
+var count = 0;
+var interval = setInterval(() => {
+  console.log(count);
+  count++;
+  if (count > 5) {
+    clearInterval(interval);
+  }
+}, 1000);
+```
+*The `setInterval` function repeatedly executes a function at a given interval. The loop stops using `clearInterval()`.*
+
+```js
+fetch(`https://randomuser.me/api/`)
+.then(response => response.json())
+.then(data => console.log(data.results[0].gender));
+```
+*Fetching data using the Fetch API returns a promise, requiring `.then()` to handle responses.*
+
+```js
+axios.get('https://randomuser.me/api/')
+.then(response => console.log(response.data.results[0].gender));
+```
+*Axios simplifies HTTP requests by directly providing JSON data.*
+## Promises in JavaScript
+
+A **Promise** represents the eventual completion (or failure) of an asynchronous operation and its resulting value. A Promise can have three states:
+
+- **Pending**: The operation has not yet completed.
+- **Resolved (Fulfilled)**: The operation completed successfully.
+- **Rejected**: The operation failed.
+
+### Creating and Handling a Promise
+
+```js
+var pro = new Promise((resolve, reject) => {
+  fetch(`https://randomuser.me/api/`)
+  .then(response => response.json())
+  .then(data => {
+    if (data.results[0].gender === 'male') resolve('Got the male');
+    else reject('Not a male');
+  });
+});
+
+console.log(pro); // Initially, it will be "pending"
+
+pro
+  .then(data => {
+    console.log(data); // If resolved, logs 'Got the male'
+  })
+  .catch(error => {
+    console.error(error); // If rejected, logs 'Not a male'
+  });
+
+setTimeout(() => {
+  console.log(pro); // Logs the resolved/rejected state after 5 seconds
+}, 5000);
 ```
 
-## Learning Objectives
+## Web Workers in JavaScript
 
-### Key Concepts Covered
-- Constructor functions
-- Prototypal inheritance
-- Closure mechanisms
-- Event handling techniques
-- Higher-order function patterns
+### What are Web Workers?
+Web Workers allow JavaScript to run scripts in the background, separate from the main thread. This improves performance by handling intensive tasks without blocking the UI.
 
-### Recommended Next Steps
-1. Asynchronous JavaScript
-2. Promises and Async/Await
-3. Object-Oriented Programming
-4. Design Patterns
-5. Advanced Functional Programming
+### Why Use Web Workers?
+- Executes code in the background without freezing the main thread.
+- Ideal for CPU-intensive tasks like data processing, calculations, or fetching large amounts of data.
+- Prevents performance lag in web applications.
 
-## Best Practices
-- Use prototypes for shared methods
-- Understand closure scoping
-- Implement event delegation for performance
-- Create reusable higher-order functions
-- Avoid unnecessary function creation
+### Example: Using Web Workers to Sum an Array
 
-## Resources
-- MDN Web Docs
-- "You Don't Know JS" Book Series
-- JavaScript.info
-- Eloquent JavaScript
+### **Main Thread (`main.js`)**
+```js
+// Creating a large array of numbers from 1 to 1000
+var arr = Array.from({ length: 1000 }, (a, b) => b + 1);
 
----
+// Creating a new Web Worker
+const worker = new Worker('worker.js');
 
-**Note:** Mastering these concepts requires consistent practice and deep understanding of JavaScript's unique features.
+// Sending data to the worker
+worker.postMessage(arr);
 
+// Receiving the computed result from the worker
+worker.onmessage = (data) => {
+  console.log("Sum of array:", data.data);
+};
+```
